@@ -1,10 +1,8 @@
 import App from './App.vue'
-
-// Composables
 import { createApp } from 'vue'
-
-// Plugins
 import { registerPlugins } from '@/plugins'
+import '@/styles/default.scss'
+import '@/styles/lib.scss'
 
 const app = createApp(App)
 

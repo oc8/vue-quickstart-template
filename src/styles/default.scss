@@ -1,156 +1,30 @@
-/* A simple CSS library for building responsive websites */
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.h1 {
+  font-size: 5rem;
+  font-weight: 600;
 }
-* {
-	border: 0;
-	font-size: 100%;
-	font-family: inherit;
-	text-decoration: none;
+
+.h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
 }
-*,
-::before,
-::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+
+.h3 {
+  font-size: 2rem;
+  font-weight: 500;
 }
-html {
-	scroll-behavior: smooth;
-}
-div {
-	// width: 100%;
-}
-textarea:focus,
-input:focus {
-	outline: none;
-}
-button {
-	cursor: pointer;
-	background: none;
-	font-size: 1rem;
-}
-a {
-	color: black;
-	cursor: pointer;
-}
-ul {
-    list-style-type: none;
-}
-.page {
-	height: 100vh;
-}
-.column {
-	display: flex;
-	flex-direction: column;
-}
-.row {
-	display: flex;
-	flex-direction: row;
-}
-.grid2 {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-}
-.grid3 {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-}
-.grid4 {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-}
-.col2 {
-	grid-column-end: span 2;
-}
-.col3 {
-	grid-column-end: span 3;
-}
-.col4 {
-	grid-column-end: span 4;
-}
-.row2 {
-	grid-row-end: span 2;
-}
-.row3 {
-	grid-row-end: span 3;
-}
-.row4 {
-	grid-row-end: span 4;
-}
-.center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.center-v {
-	display: flex;
-	align-items: center;
-}
-.center-h {
-	display: flex;
-	justify-content: center;
-}
-.left {
-	display: flex;
-	justify-content: flex-start;
-}
-.right {
-	display: flex;
-	justify-content: flex-end;
-}
-.top {
-	display: flex;
-	align-items: flex-start;
-}
-.bottom {
-	display: flex;
-	align-items: flex-end;
-}
-.limit {
-	max-width: 1920px;
-}
-.space-between {
-	display: flex;
-	justify-content: space-between !important;
-}
-.stack {
-	position: relative;
-}
-.height-100, .mh, .max-height {
-	height: 100%;
-}
-.width-auto {
-	width: auto;
-}
-.height-auto {
-	height: auto;
-}
-.width-100, .mw, .max-width {
-	width: 100%;
-}
-.border {
-	border: 1px solid gray;
-}
-.hide {
-	display: none !important;
-}
-.wrap {
-	display: flex;
-	flex-wrap: wrap;
-}
-.wrap-page {
-	flex-direction: column;
-}
-/* mobile first */
-@media screen and (min-width: 1000px) {
-  .wrap-page {
-    flex-direction: row;
+
+@media screen and (max-width: 1000px) {
+  .h1 {
+    font-size: 3rem;
+  }
+
+  .h2 {
+    font-size: 1.7rem;
+  }
+
+  .h3 {
+    font-size: 1rem;
   }
 }
+
 /* fonts: https://transfonter.org/ */
