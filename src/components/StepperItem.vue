@@ -5,7 +5,7 @@ import { useAppStore } from '@/store/app';
 let app = useAppStore();
 let props = defineProps({
 	'steps': {
-		type: Array,
+		type: Array<String>,
 		required: true
 	},
 	'currentStep': {
@@ -13,7 +13,7 @@ let props = defineProps({
 		required: true
 	}
 })
-let newSteps = []
+let newSteps: Array<{value: String, index: number}> = []
 for (let i = 0; i < props.steps.length; i++) {
 	newSteps.push({ value: props.steps[i], index: i });
 }
@@ -25,9 +25,9 @@ for (let i = 0; i < props.steps.length; i++) {
 			<div class="center mw" v-for="step in newSteps">
 				<div class="line" :style="step.index > 0? '' : 'opacity: 0'"></div>
 				<div class="row center round">
-					<div class="icon center">
+					<div :class="'icon center' + (step.index <= currentStep? ' current' : '')">
 						<p v-if="step.index >= currentStep">{{ step.index + 1 }}</p>
-						<span v-else-if="step.index < currentStep" class="material-symbols-outlined done-icon">
+						<span v-else class="material-symbols-outlined done-icon">
 							done
 						</span>
 					</div>
@@ -75,10 +75,12 @@ for (let i = 0; i < props.steps.length; i++) {
 	color: white;
 	width: 30px;
 	height: 30px;
-	background-color: v-bind("app.colors.secondary");
 	border-radius: 50%;
 }
-
+.current {
+	background-color: v-bind("app.colors.secondary");
+	font-weight: 500;
+}
 .text {
 	color: v-bind("app.colors.accent");
 	text-align: center;
