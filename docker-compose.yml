@@ -1,55 +1,16 @@
 version: '3'
 
 services:
-  front:
-    build:
-      context: .
-      dockerfile: dockerfile
-    image: front
-    container_name: front
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
-    networks:
-      - app-network
-
   webserver:
-    image: nginx:mainline-alpine
-    container_name: webserver
-    restart: unless-stopped
+    image: nginx:latest
     ports:
-      - "80:80"
+      - 80:80
+      - 443:443
+    restart: always
     volumes:
-      - web-root:/var/www/html
-      - ./nginx-conf:/etc/nginx/conf.d
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-    depends_on:
-      - front
-    networks:
-      - app-network
-
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www:/var/www/certbot/:ro
   certbot:
-    image: certbot/certbot
-    container_name: certbot
+    image: certbot/certbot:latest
     volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
-    depends_on:
-      - webserver
-    command: certonly --webroot --webroot-path=/var/www/html --email 88hunter.agent88@gmail.com --agree-tos --no-eff-email --staging -d contactinfo.fr  -d www.contactinfo.fr
-
-volumes:
-  certbot-etc:
-  certbot-var:
-  web-root:
-    driver: local
-    driver_opts:
-      type: none
-      device: ${PATH_VOLUME}
-      o: bind
-
-networks:
-  app-network:
-    driver: bridge
+      - ./certbot/www/:/var/www/certbot/:rw
