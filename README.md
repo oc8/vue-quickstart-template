@@ -18,14 +18,14 @@ This project is a starting point for building web applications using VueJS3 with
 
 2. Install the dependencies
 ```
-yarn
+npm i
 ```
 
 ### Usage
 
 1. Start the development server
 ```
-yarn serve
+npm run dev
 ```
 
 2. Open the application in your web browser at 2. Open the application in your web browser at http://localhost:8081/
@@ -39,7 +39,7 @@ To build the application for production, use the following command:
 
 To build the application for production, use the following command:
 ```
-yarn build
+npm run build
 ```
 
 This will create a `dist` folder with the production-ready files.
