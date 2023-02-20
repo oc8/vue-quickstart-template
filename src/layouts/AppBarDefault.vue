@@ -1,6 +1,6 @@
 <template>
 	<header class="header center">
-		<h1>Welcome to my project</h1>
+		<h1>Welcome to my library</h1>
 	</header>
 </template>
 

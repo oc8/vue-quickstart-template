@@ -12,7 +12,7 @@ let app = useAppStore()
 </template>
 
 <style lang="scss">
-.p {
+p {
 	color: v-bind("app.colors.text")
 }
 </style>

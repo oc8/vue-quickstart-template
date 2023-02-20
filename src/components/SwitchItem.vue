@@ -1,8 +1,12 @@
-<script setup lang="ts">
-import { ref, onMounted, defineProps } from 'vue'
-import { useAppStore } from '@/store/app';
+<template>
+	<button ref="background" class="background stack" v-on:click="action()">
+		<div ref="circle" class="circle"></div>
+	</button>
+</template>
 
-let app = useAppStore();
+<script setup lang="ts">
+import { ref, inject, onMounted, defineProps } from 'vue'
+
 const props = defineProps({
 	height: {
 		type: Number,
@@ -36,24 +40,15 @@ onMounted(() => {
 })
 </script>
 
-<template>
-	<button ref="background" class="background stack" v-on:click="action()">
-		<div ref="circle" class="circle center">
-			<img v-if="on" src="../assets/sun.svg" alt="light mode" class="mode" />
-			<img v-if="!on" src="../assets/moon.svg" alt="dark mode" class="mode" />
-		</div>
-	</button>
-</template>
-
 <style scoped>
 .background {
 	width: v-bind("height * 2 + 'px'");
 	height: v-bind("height + 'px'");
 	border-radius: 50px;
-	background-color: v-bind("app.colors.c3");
+	background-color: rgb(134, 223, 0);
+	background-color: grey;
 	transition: all 0.25s ease;
 }
-
 .circle {
 	position: absolute;
 	top: 10%;
@@ -72,11 +67,6 @@ onMounted(() => {
 }
 
 .color-active {
-	background-color: v-bind("app.colors.c2");
-}
-
-.mode {
-	width: 80%;
-	height: 80%;
+	background-color: rgb(134, 223, 0);
 }
 </style>

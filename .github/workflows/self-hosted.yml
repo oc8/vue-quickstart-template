@@ -1,0 +1,25 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Build
+      run: |
+        npm run build
+
+    - name: Link
+      run: |
+        echo "Linking to /var/www/${{ github.event.repository.name }}"
+        sudo mkdir -p /var/www/${{ github.event.repository.name }}
+        sudo rm -rf /var/www/${{ github.event.repository.name }}/*
+        sudo mv $PWD/dist/* /var/www/${{ github.event.repository.name }}/

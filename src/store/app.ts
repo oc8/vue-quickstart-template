@@ -3,27 +3,28 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 const myColors = {
-	intenseblue: '#0017C4',
-	simpleblue: '#2D73FF',
-	cleangrey: '#EDEDF0',
-	deepblue: '#050B3B',
-	white: '#ffffff',
+	c1: '#050B3B',
+	c2: '#0017C4',
+	c3: '#2D73FF',
+	c4: '#EDEDF0',
+	c5: '#ffffff',
+	c6: '#ffffff',
 }
 const themes: any = {
 	'dark': {
 		name: 'dark',
-		background: myColors.deepblue,
-		text: myColors.white,
-		primary: myColors.simpleblue,
-		secondary: myColors.intenseblue,
+		background: myColors.c1,
+		text: myColors.c5,
+		primary: myColors.c3,
+		secondary: myColors.c2,
 		...myColors
 	},
 	'light': {
 		name: 'light',
-		background: myColors.white,
-		text: myColors.deepblue,
-		primary: myColors.intenseblue,
-		secondary: myColors.simpleblue,
+		background: myColors.c5,
+		text: myColors.c1,
+		primary: myColors.c2,
+		secondary: myColors.c3,
 		...myColors
 	},
 }
