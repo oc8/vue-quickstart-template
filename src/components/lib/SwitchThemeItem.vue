@@ -39,8 +39,8 @@ onMounted(() => {
 <template>
 	<button ref="background" class="background stack" v-on:click="action()">
 		<div ref="circle" class="circle center">
-			<img v-if="on" src="../assets/sun.svg" alt="light mode" class="mode" />
-			<img v-if="!on" src="../assets/moon.svg" alt="dark mode" class="mode" />
+			<img v-if="on" src="@/assets/sun.svg" alt="light mode" class="mode" />
+			<img v-if="!on" src="@/assets/moon.svg" alt="dark mode" class="mode" />
 		</div>
 	</button>
 </template>

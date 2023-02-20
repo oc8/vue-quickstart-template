@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import SwitchThemeItem from '@/components/SwitchThemeItem.vue'
+import SwitchThemeItem from '@/components/lib/SwitchThemeItem.vue'
 import { ref } from 'vue'
 import { useAppStore } from '@/store/app'
-import HoverItem from '@/components/HoverItem.vue';
+import HoverItem from '@/components/lib/HoverItem.vue';
 
 let app = useAppStore();
 </script>
@@ -39,7 +39,7 @@ let app = useAppStore();
 					<img src="https://skillicons.dev/icons?i=vue,vite,ts,)" alt="logo" class="logo" />
 				</li>
 			</ul> -->
-			<router-view />
+			<!-- <router-view /> -->
 		</div>
 	</div>
 </template>

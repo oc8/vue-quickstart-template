@@ -13,5 +13,6 @@ let app = useAppStore();
 <style scoped lang="scss">
 .main {
 	background-color: v-bind("app.colors.background");
+	min-height: calc(100vh - 100px);
 }
 </style>

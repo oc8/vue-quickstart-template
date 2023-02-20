@@ -15,4 +15,7 @@ let app = useAppStore()
 p {
 	color: v-bind("app.colors.text")
 }
+.h1 {
+	color: v-bind("app.colors.title")
+}
 </style>

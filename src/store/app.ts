@@ -14,6 +14,7 @@ const themes: any = {
 	'dark': {
 		name: 'dark',
 		background: myColors.c1,
+		title: myColors.c3,
 		text: myColors.c5,
 		primary: myColors.c3,
 		secondary: myColors.c2,
@@ -22,6 +23,7 @@ const themes: any = {
 	'light': {
 		name: 'light',
 		background: myColors.c5,
+		title: myColors.c2,
 		text: myColors.c1,
 		primary: myColors.c2,
 		secondary: myColors.c3,
